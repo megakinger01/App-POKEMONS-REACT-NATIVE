@@ -1,18 +1,15 @@
 import React from 'react'
+import { RootStackParms } from './Tabs1';
 import { createStackNavigator } from '@react-navigation/stack';
-import { HomeScreen } from '../screens/HomeScreen';
+import { SearchScreen } from '../screens/SearchScreen';
 import { PokemonScreen } from '../screens/PokemonScreen';
-import { SimplePokemon } from '../interfaces/pokemonInterfaces';
 
 
-export type RootStackParms = {
-  HomeScreen: undefined;
-  PokemonScreen: { simplePokemon: SimplePokemon, color: string }
-}
 
 const Stack = createStackNavigator<RootStackParms>();
 
-export const Navigation = () => {
+export const Tabs2 = () => {
+
   return (
     <Stack.Navigator
       screenOptions={{
@@ -22,8 +19,9 @@ export const Navigation = () => {
         }
       }}
     >
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="HomeScreen" component={SearchScreen} />
       <Stack.Screen name="PokemonScreen" component={PokemonScreen} />
     </Stack.Navigator>
   );
+
 }
